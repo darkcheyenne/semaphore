@@ -21,7 +21,7 @@
 #     shell: echo "{{ inventory_hostname }}"
      register: server
 
-   - name: Show debugging on your fucking terminal
+   - name: Show debugging on your terminal
      debug:
        msg:
          - "{{ disk.stdout }}"
