@@ -25,5 +25,4 @@
      debug:
        msg:
          - "{{ disk.stdout }}G Available"
-         - "{{ use.stdout }}"
-         - "{{ server.stdout }}"
+         - "{{ use.stdout }}% Used"
