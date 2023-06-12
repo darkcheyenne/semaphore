@@ -21,22 +21,9 @@
 #     shell: echo "{{ inventory_hostname }}"
      register: server
 
-#   - name: Show debugging on your fucking terminal
-#     debug:
-#       msg:
-#         - "{{ disk.stdout }}"
-#         - "{{ use.stdout }}"
-#         - "{{ server.stdout }}"
-
-   - name: Adding record disk usage to list on file
-     lineinfile:
-      dest: avail_disk.txt
-      line: "{{ mountpoint }} reache {{ use.stdout }}%, remaining disk : {{ disk.stdout }} GB ON {{ server.stdout }} !"
-      state: present
-     delegate_to: 127.0.0.1
-     register: msgtxt
-     with_items:
-       - "{{ disk.stdout }}"
-       - "{{ server.stdout }}"
-       - "{{ use.stdout }}"
-     when: use.stdout >= limit_max #minimum % disk usage want add to list
+   - name: Show debugging on your fucking terminal
+     debug:
+       msg:
+         - "{{ disk.stdout }}"
+         - "{{ use.stdout }}"
+         - "{{ server.stdout }}"
