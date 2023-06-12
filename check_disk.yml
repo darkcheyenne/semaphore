@@ -24,6 +24,6 @@
    - name: Show debugging on your terminal
      debug:
        msg:
-         - "{{ disk.stdout }}"
+         - "{{ disk.stdout }}G Available"
          - "{{ use.stdout }}"
          - "{{ server.stdout }}"
