@@ -1,0 +1,10 @@
+---
+
+- name: Check Disk Usage
+  hosts: all
+  connection: ansible.netcommon.network_cli
+  gather_facts: false
+  tasks:
+    - name: Checking Disk on your Server
+      shell: df -hBG "{{mountpoint}}" | tail -n 1 | awk {'print $4 '}  | sed 's/G//g'
+      register: disk
