@@ -5,6 +5,7 @@
   connection: ansible.netcommon.network_cli
   gather_facts: false
   vars:
+        mountpoint: "/"  #mountpoint disk want to check
         limit_max: "1"
   tasks:
    - name: Checking Disk on your Server
