@@ -1,6 +1,7 @@
 ---
 
 - name: Check Disk Usage
+  hosts: all
   connection: ansible.netcommon.network_cli
   gather_facts: false
   vars:
