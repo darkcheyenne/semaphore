@@ -4,6 +4,8 @@
   hosts: all
   connection: ansible.netcommon.network_cli
   gather_facts: false
+  vars:
+        limit_max: "1"
   tasks:
    - name: Checking Disk on your Server
      shell: df -hBG "/" | tail -n 1 | awk {'print $4 '}  | sed 's/G//g'
