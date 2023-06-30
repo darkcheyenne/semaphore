@@ -7,4 +7,4 @@
   tasks:
     - name: Prune everything
       ansible.builtin.shell:
-        cmd: docker image prune
+        cmd: docker image prune -f
