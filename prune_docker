@@ -1,0 +1,14 @@
+---
+
+- name: Test
+  hosts: all
+  connection: ansible.netcommon.network_cli
+  gather_facts: false
+  tasks:
+    - name: Prune everything
+      docker_prune:
+        containers: no
+        images: yes
+        networks: no
+        volumes: no
+        builder_cache: yes
