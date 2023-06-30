@@ -6,9 +6,5 @@
   gather_facts: false
   tasks:
     - name: Prune everything
-      docker_prune:
-        containers: no
-        images: yes
-        networks: no
-        volumes: no
-        builder_cache: yes
+      ansible.builtin.shell:
+        cmd: docker image prune
